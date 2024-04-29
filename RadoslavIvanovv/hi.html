@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hi, </title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+    }
+
+    #backgroundImage {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('jojo.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    #infoBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    #infoBox h1 {
+        margin-top: -450px; /* Adjusted margin-top */
+        text-align: center;
+        color: white; /* Title color set to white */
+    }
+
+    #infoBox p {
+        margin-top: -10px; /* Adjusted margin-top */
+        text-align: center;
+        color: white; /* Text color set to white */
+    }
+
+    .button {
+        display: block;
+        width: 120px;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: #6e39ff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<div id="backgroundImage"></div>
+
+<div id="infoBox">
+    <h1>Welcome, </h1>
+    <p>please sign up first to save your scores</p>
+    <a href="welcome.html" class="button">Sign Up</a>
+    <a href="index.html" class="button">Play as Guest</a>
+</div>
+
+<script>
+    // Get the "Sign Up" button
+    const signUpButton = document.querySelector('.button:first-of-type');
+
+    // Add event listener to the "Sign Up" button
+    signUpButton.addEventListener('click', function(event) {
+        // Prevent default link behavior
+        event.preventDefault();
+        
+        // Redirect to welcome.html
+        window.location.href = "welcome.html";
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Consent</title>
+    <style>
+        /* Popup container */
+        .popup-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            max-width: 80%;
+            text-align: center;
+            z-index: 9999;
+        }
+
+        /* Text inside the popup */
+        .popup-text {
+            margin-bottom: 10px;
+        }
+
+        /* Buttons */
+        .popup-button {
+            background-color: #6e39ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        /* Button hover effect */
+        .popup-button:hover {
+            background-color: #6e39ff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Popup container -->
+    <div id="popupContainer" class="popup-container">
+        <!-- Text inside the popup -->
+        <div class="popup-text">
+            We use cookies to enable the proper functioning and security of our websites, and help us offer you the best possible user experience. By clicking Accept, you consent to the use of these cookies for advertising and analytics.
+        </div>
+        <!-- Buttons -->
+        <button class="popup-button" onclick="acceptCookies()">Accept</button>
+        <button class="popup-button" onclick="declineCookies()">Decline</button>
+    </div>
+
+    <script>
+        function acceptCookies() {
+            // Close the current popup
+            document.getElementById('popupContainer').style.display = 'none';
+
+            // Show the thank you popup
+            var thankYouPopup = document.createElement('div');
+            thankYouPopup.classList.add('popup-container');
+            thankYouPopup.innerHTML = '<div class="popup-text">Thank you for accepting</div>';
+            document.body.appendChild(thankYouPopup);
+
+            // Remove the thank you popup after 3 seconds
+            setTimeout(function() {
+                document.body.removeChild(thankYouPopup);
+            }, 3000);
+        }
+
+        function declineCookies() {
+            // Close the current popup
+            document.getElementById('popupContainer').style.display = 'none';
+
+            // Show the message for declining cookies
+            var declinePopup = document.createElement('div');
+            declinePopup.classList.add('popup-container');
+            declinePopup.innerHTML = '<div class="popup-text">You have declined cookies</div>';
+            document.body.appendChild(declinePopup);
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Box</title>
+    <style>
+        .info-box {
+            width: 500px;
+            height: 175px;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            padding: 20px;
+            position: absolute;
+            left: 50%;
+            top: 35%;
+            transform: translate(-50%, -50%);
+            transition: all 0.5s ease;
+        }
+
+        .info-box:hover {
+           
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .info-box h2 {
+            color: #ffffff;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .info-box p {
+            color: #ffffff;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="info-box">
+        <h2>Game Information</h2>
+        <p>Hello Players, this is a simple 2D game based on a popular anime and manga series by the name "Jojo's Bizarre Adventure", and im happy that you have the time to give it a try!!!
+            You can play as Guest to give it a quick look, and if it's playable enough can even make a profile to keep your scores registered on the leaderboard with top 15 players
+        </p>
+    </div>
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Box 2</title>
+    <style>
+        .info-box-2 {
+            width: 500px;
+            height: 175px;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            padding: 20px;
+            position: absolute;
+            left: 50%;
+            top: 65%; /* Adjusted top position */
+            transform: translate(-50%, -50%);
+            transition: all 0.5s ease;
+        }
+
+        .info-box-2:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .info-box-2 h2 {
+            color: #ffffff;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .info-box-2 p {
+            color: #ffffff;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="info-box-2">
+        <h2>Patch Notes 0.0.1</h2>
+        <p>nothing yet, still in pre-alpha</p>
+    </div>
+</body>
+</html>
+
+
+

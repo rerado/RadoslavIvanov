@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheap Trick Realm</title>
+    <html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Move Button</title>
+<style>
+    #myButton {
+        position: relative;
+        left: 195px;
+        top: 58px;
+    }
+</style>
+</head>
+<body>
+    <button id="myButton">Rules</button>
+</body>
+</html>
+    <link rel="stylesheet" href="mole.css">
+    <script src="mole.js"></script>
+</head>
+<body>
+    <h1>Cheap Trick Realm</h1>
+    <h2 id="score">0</h2>
+    <!-- 3x3 -->
+    <div id="board">
+    </div>
+</body>
+</html>
+
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Show Text on Hover</title>
+<style>
+    /* Styles for the button */
+    #myButton {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #6e39ff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* Styles for the text window */
+    #textWindow {
+        display: none; /* Initially hidden */
+        position: absolute;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        top: 55px; /* Adjust as needed */
+        left: 1193px; /* Adjust as needed */
+        border-radius: 10px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <!-- Text Window -->
+    <div id="textWindow">Click on Tusk, but be careful there is a Cheap Trick lurking around!?!?!?!</div>
+
+    <script>
+        // JavaScript to handle hover event
+        var button = document.getElementById('myButton');
+        var textWindow = document.getElementById('textWindow');
+
+        // Show text window when hovering over the button
+        button.addEventListener('mouseover', function() {
+            textWindow.style.display = 'block';
+        });
+
+        // Hide text window when mouse leaves the button
+        button.addEventListener('mouseout', function() {
+            textWindow.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        h1 {
+            margin-left: 20px;
+        }
+        #score {
+            margin-left: 20px;
+        }
+        #leaderboardButton {
+            position: fixed;
+            left: 685px;
+            top: 68px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #6e39ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000; /* Ensure the button is on top of other elements */
+        }
+    </style>
+</head>
+<body>
+    <!-- Leaderboard Button -->
+    <button id="leaderboardButton">Leaderboard</button>
+    <!-- Game board -->
+    <div id="board"></div>
+    <script>
+        // Function to handle opening the leaderboard.html
+        function openLeaderboard() {
+            window.location.href = "leaderboard.html"; // Redirect to leaderboard.html
+        }
+
+        // Add click event listener to the leaderboard button
+        document.getElementById('leaderboardButton').addEventListener('click', openLeaderboard);
+    </script>
+</body>
+</html>
+
