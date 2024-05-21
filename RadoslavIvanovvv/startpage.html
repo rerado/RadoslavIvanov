@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('jojo.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Added to align items vertically */
+        }
+
+        h1 {
+            font-size: 90px; /* Default font size */
+            color: #6e39ff; /* You can customize this color later */
+            margin-bottom: 20px; /* Added space below the title */
+        }
+
+        .loading-dots {
+            display: flex;
+        }
+
+        .loading-dot {
+            width: 20px;
+            height: 20px;
+            background-color: #6e39ff; /* You can customize this color later */
+            border-radius: 50%;
+            margin: 0 5px; /* Adjust spacing between dots */
+            animation: loading-animation 1s infinite; /* Animation for dots */
+        }
+
+        @keyframes loading-animation {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Loading</h1>
+    <div class="loading-dots">
+        <div class="loading-dot"></div>
+        <div class="loading-dot"></div>
+        <div class="loading-dot"></div>
+    </div>
+    <script>
+        setTimeout(function() {
+            window.location.href = "hi.html";
+        }, 2000); // Redirect after 2 seconds
+    </script>
+</body>
+</html>
